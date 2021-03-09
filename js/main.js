@@ -1,8 +1,10 @@
 let input_field = document.getElementById('input');
 let btn = document.getElementById('submit');
+let btn_call = document.getElementById('btn-call');
 let status_text = document.getElementById('status-text');
 let peer_id = document.getElementById('peer-id');
-
+let video = document.getElementById('video');
+let title = document.querySelector('title');
 
 
 let peer = new Peer();
@@ -15,6 +17,7 @@ peer.on('open', (id) => {
         peer.id = lastPeerId;
     }
     peer_id.innerHTML = 'Peer ID: ' + peer.id;
+    title.text = peer.id;
     console.log('ID: ' + peer.id);
 
 });
@@ -38,8 +41,46 @@ function join(){
 
 }
 
+const options = {
+    video: {
+      cursor: "always"
+    },
+    audio: {
+      echoCancellation: true,
+      noiseSuppression: true,
+      sampleRate: 44100
+    }
+  }
+
+function call(){
+    navigator.mediaDevices.getDisplayMedia(options)
+        .then(stream => {
+            peer.call(input_field.value, stream);
+        });
+}
+
+peer.on('call', function(call) {
+    // navigator.mediaDevices.getDisplayMedia(options)
+    //     .then(() => {
+            // call.answer();
+        // })
+    call.answer();
+    call.on('stream', function(stream) {
+        video.srcObject = stream;
+    })
+
+    // call.on('stream', function(stream) {
+    //     video.srcObject = stream;
+    // });
+})
+
 
 btn.addEventListener('click', () => {
     console.log('clicked');
     join();
+})
+
+btn_call.addEventListener('click', () => {
+    console.log('call clicked');
+    call();
 })
