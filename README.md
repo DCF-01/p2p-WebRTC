@@ -15,7 +15,6 @@
 <img src="https://imgur.com/aB3XJxk.png">
 <br/>
 <hr>
-<br>
 
 #### Libraries used:
 1. [PeerJS](https://github.com/peers/peerjs)
