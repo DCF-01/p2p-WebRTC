@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css" integrity="sha512-usVBAd66/NpVNfBge19gws2j6JZinnca12rAe2l+d+QkLU9fiG02O1X8Q6hepIpr/EYKZvKx/I9WsnujJuOmBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-  <div class="d-flex justify-content-center align-items-center">
+  <div class="d-flex justify-content-center align-items-center flex-column vh-50">
     <div class="custom-container">
       <h1 class="mb-3">Share screen app</h1>
       <button type="button" class="btn btn-primary mb-4" id="submit">Connect</button>
@@ -17,6 +17,8 @@
       <input class="form-control mb-3" type="text" placeholder="Peer ID of the opposite party" aria-label="default input example" id="input">
       <p id="status-text"></p>
       <p id="peer-id"></p>
+    </div>
+    <div class="video-container">
       <video id="video" autoplay></video>
     </div>
   </div>
