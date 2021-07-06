@@ -13,7 +13,7 @@
 4. Thats it. Now the they'll be able to see your stream.
 <br/><br/>
 <img src="https://imgur.com/aB3XJxk.png">
-<br/>
+<br>
 <hr>
 
 #### Libraries used:
