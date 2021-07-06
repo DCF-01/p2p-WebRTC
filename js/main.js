@@ -16,7 +16,7 @@ peer.on('open', (id) => {
         console.log('Received null id from peer open');
         peer.id = lastPeerId;
     }
-    peer_id.innerHTML = 'Peer ID: ' + peer.id;
+    peer_id.innerHTML = 'My Peer ID: ' + peer.id;
     title.text = peer.id;
     console.log('ID: ' + peer.id);
 
